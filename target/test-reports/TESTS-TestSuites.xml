@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="sofs4" id="0" name="TekEventSpec" package="com.tekdays" skipped="0" tests="1" time="0.07" timestamp="2021-10-19T11:58:00">
+      <properties />
+
+      <testcase classname="com.tekdays.TekEventSpec" name="test toString" time="0.066" />
+
+      <system-out><![CDATA[--Output from test toString--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test toString--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="sofs4" id="1" name="TekUserSpec" package="com.tekdays" skipped="0" tests="1" time="0.967" timestamp="2021-10-19T11:57:59">
+      <properties />
+
+      <testcase classname="com.tekdays.TekUserSpec" name="test toString" time="0.936" />
+
+      <system-out><![CDATA[--Output from test toString--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from test toString--
+]]></system-err>
+
+  </testsuite>
+</testsuites>
