@@ -1,0 +1,22 @@
+package com.tekdays
+
+class Sponsorship {
+
+    TekEvent event
+    Sponsor sponsor
+    String contributionType
+    String description
+    String notes
+
+    String toString() {
+        "Event: $event.name, Sponsor: $sponsor"
+    }
+
+    static constraints = {
+        event nullable: false
+        sponsor nullable: false
+        contributionType inList: ["Other", "Venue", "A/V", "Promotion", "Cash"]
+        description nullable: true, blank: true
+        notes nullable: true, maxSize: 5000
+    }
+}
