@@ -8,9 +8,9 @@ class Sponsorship {
     String description
     String notes
 
-    String toString() {
-        "Event: $event.name, Sponsor: $sponsor"
-    }
+//    String toString() {
+//      return  "Event: ${event.name}, Sponsor: $sponsor"
+//    }
 
     static constraints = {
         event nullable: false
@@ -19,4 +19,6 @@ class Sponsorship {
         description nullable: true, blank: true
         notes nullable: true, maxSize: 5000
     }
+
+
 }
