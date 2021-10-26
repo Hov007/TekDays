@@ -1,47 +1,79 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="0" name="SponsorControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.27" timestamp="2021-10-25T13:19:02">
+  <testsuite errors="0" failures="5" hostname="sofs4" id="0" name="SponsorControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.299" timestamp="2021-10-26T11:59:29">
       <properties />
 
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the index action returns the correct model" time="0.118" />
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the index action returns the correct model" time="0.123" />
 
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the create action returns the correct model" time="0.02" />
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the create action returns the correct model" time="0.024">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor!= null&#xa;|     |      |&#xa;|     null   false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test the create action returns the correct model(SponsorControllerSpec.groovy:35)
+</failure>
+
+      </testcase>
 
       <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the save action correctly persists an instance" time="0.024">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/sponsor/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@28989415&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor!= null&#xa;|     |      |&#xa;|     null   false&#xa;[sponsorInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-response.redirectedUrl == &apos;/sponsor/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@28989415
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:null]
 
-	at com.tekdays.SponsorControllerSpec.Test the save action correctly persists an instance(SponsorControllerSpec.groovy:57)
+	at com.tekdays.SponsorControllerSpec.Test the save action correctly persists an instance(SponsorControllerSpec.groovy:49)
 </failure>
 
       </testcase>
 
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the show action returns the correct model" time="0.017" />
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the show action returns the correct model" time="0.025">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  420&#xa;|             false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the edit action returns the correct model" time="0.035" />
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
 
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.032">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.SponsorControllerSpec.Test the update action performs an update on a valid domain instance(SponsorControllerSpec.groovy:122)
-</error>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.018">
-          <failure message="Condition not satisfied:&#xa;&#xa;Sponsor.count() == 1&#xa;        |       |&#xa;        0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-Sponsor.count() == 1
-        |       |
-        0       false
-
-	at com.tekdays.SponsorControllerSpec.Test that the delete action deletes an instance if it exists(SponsorControllerSpec.groovy:142)
+	at com.tekdays.SponsorControllerSpec.Test that the show action returns the correct model(SponsorControllerSpec.groovy:75)
 </failure>
 
       </testcase>
+
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the edit action returns the correct model" time="0.023">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  420&#xa;|             false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test that the edit action returns the correct model(SponsorControllerSpec.groovy:91)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.036">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  com.tekdays.Sponsor@6533629&#xa;|             false&#xa;[sponsorInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  com.tekdays.Sponsor@6533629
+|             false
+[sponsorInstance:null]
+
+	at com.tekdays.SponsorControllerSpec.Test the update action performs an update on a valid domain instance(SponsorControllerSpec.groovy:112)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.037" />
 
       <system-out><![CDATA[--Output from Test the index action returns the correct model--
 --Output from Test the create action returns the correct model--
@@ -62,48 +94,91 @@ Sponsor.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="1" name="SponsorshipControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.235" timestamp="2021-10-25T13:19:03">
+  <testsuite errors="0" failures="6" hostname="sofs4" id="1" name="SponsorshipControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.238" timestamp="2021-10-26T11:59:30">
       <properties />
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the index action returns the correct model" time="0.108" />
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the index action returns the correct model" time="0.107">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship == 0&#xa;|     |           |&#xa;|     null        false&#xa;[sponsorshipInstanceCount:0, emptyCollection:[]]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the create action returns the correct model" time="0.016" />
+model.sponsorship == 0
+|     |           |
+|     null        false
+[sponsorshipInstanceCount:0, emptyCollection:[]]
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the save action correctly persists an instance" time="0.023">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/sponsorship/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@472c9f88&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-response.redirectedUrl == &apos;/sponsorship/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@472c9f88
-
-	at com.tekdays.SponsorshipControllerSpec.Test the save action correctly persists an instance(SponsorshipControllerSpec.groovy:57)
+	at com.tekdays.SponsorshipControllerSpec.Test the index action returns the correct model(SponsorshipControllerSpec.groovy:24)
 </failure>
 
       </testcase>
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the show action returns the correct model" time="0.018" />
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the create action returns the correct model" time="0.014">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship!= null&#xa;|     |          |&#xa;|     null       false&#xa;[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the edit action returns the correct model" time="0.015" />
+model.sponsorship!= null
+|     |          |
+|     null       false
+[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]
 
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.031">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.SponsorshipControllerSpec.Test the update action performs an update on a valid domain instance(SponsorshipControllerSpec.groovy:122)
-</error>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.018">
-          <failure message="Condition not satisfied:&#xa;&#xa;Sponsorship.count() == 1&#xa;            |       |&#xa;            0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-Sponsorship.count() == 1
-            |       |
-            0       false
-
-	at com.tekdays.SponsorshipControllerSpec.Test that the delete action deletes an instance if it exists(SponsorshipControllerSpec.groovy:142)
+	at com.tekdays.SponsorshipControllerSpec.Test the create action returns the correct model(SponsorshipControllerSpec.groovy:32)
 </failure>
 
       </testcase>
+
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the save action correctly persists an instance" time="0.022">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship!= null&#xa;|     |          |&#xa;|     null       false&#xa;[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsorship!= null
+|     |          |
+|     null       false
+[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]
+
+	at com.tekdays.SponsorshipControllerSpec.Test the save action correctly persists an instance(SponsorshipControllerSpec.groovy:45)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the show action returns the correct model" time="0.021">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship == sponsorship&#xa;|     |           |  |&#xa;|     null        |  com.tekdays.Sponsorship : (unsaved)&#xa;|                 false&#xa;[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsorship == sponsorship
+|     |           |  |
+|     null        |  com.tekdays.Sponsorship : (unsaved)
+|                 false
+[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]
+
+	at com.tekdays.SponsorshipControllerSpec.Test that the show action returns the correct model(SponsorshipControllerSpec.groovy:74)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the edit action returns the correct model" time="0.018">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship == sponsorship&#xa;|     |           |  |&#xa;|     null        |  com.tekdays.Sponsorship : (unsaved)&#xa;|                 false&#xa;[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsorship == sponsorship
+|     |           |  |
+|     null        |  com.tekdays.Sponsorship : (unsaved)
+|                 false
+[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]
+
+	at com.tekdays.SponsorshipControllerSpec.Test that the edit action returns the correct model(SponsorshipControllerSpec.groovy:90)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.03">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.sponsorship == sponsorship&#xa;|     |           |  |&#xa;|     null        |  com.tekdays.Sponsorship : (unsaved)&#xa;|                 false&#xa;[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsorship == sponsorship
+|     |           |  |
+|     null        |  com.tekdays.Sponsorship : (unsaved)
+|                 false
+[sponsorshipInstance:com.tekdays.Sponsorship : (unsaved)]
+
+	at com.tekdays.SponsorshipControllerSpec.Test the update action performs an update on a valid domain instance(SponsorshipControllerSpec.groovy:112)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.SponsorshipControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.02" />
 
       <system-out><![CDATA[--Output from Test the index action returns the correct model--
 --Output from Test the create action returns the correct model--
@@ -124,48 +199,82 @@ Sponsorship.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="2" name="TaskControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.246" timestamp="2021-10-25T13:19:03">
+  <testsuite errors="0" failures="5" hostname="sofs4" id="2" name="TaskControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.273" timestamp="2021-10-26T11:59:29">
       <properties />
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the index action returns the correct model" time="0.108" />
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the index action returns the correct model" time="0.111" />
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the create action returns the correct model" time="0.017" />
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the create action returns the correct model" time="0.02">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.task!= null&#xa;|     |   |&#xa;|     |   false&#xa;|     null&#xa;[taskInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the save action correctly persists an instance" time="0.023">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/task/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@b75b890&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:420]
 
-response.redirectedUrl == &apos;/task/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@b75b890
-
-	at com.tekdays.TaskControllerSpec.Test the save action correctly persists an instance(TaskControllerSpec.groovy:57)
+	at com.tekdays.TaskControllerSpec.Test the create action returns the correct model(TaskControllerSpec.groovy:33)
 </failure>
 
       </testcase>
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the show action returns the correct model" time="0.019" />
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the save action correctly persists an instance" time="0.02">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.task!= null&#xa;|     |   |&#xa;|     |   false&#xa;|     null&#xa;[taskInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the edit action returns the correct model" time="0.017" />
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:null]
 
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.034">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.TaskControllerSpec.Test the update action performs an update on a valid domain instance(TaskControllerSpec.groovy:122)
-</error>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.019">
-          <failure message="Condition not satisfied:&#xa;&#xa;Task.count() == 1&#xa;     |       |&#xa;     0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-Task.count() == 1
-     |       |
-     0       false
-
-	at com.tekdays.TaskControllerSpec.Test that the delete action deletes an instance if it exists(TaskControllerSpec.groovy:142)
+	at com.tekdays.TaskControllerSpec.Test the save action correctly persists an instance(TaskControllerSpec.groovy:47)
 </failure>
 
       </testcase>
+
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the show action returns the correct model" time="0.022">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.task == task&#xa;|     |    |  |&#xa;|     null |  420&#xa;|          false&#xa;[taskInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+	at com.tekdays.TaskControllerSpec.Test that the show action returns the correct model(TaskControllerSpec.groovy:76)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the edit action returns the correct model" time="0.019">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.task == task&#xa;|     |    |  |&#xa;|     null |  420&#xa;|          false&#xa;[taskInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+	at com.tekdays.TaskControllerSpec.Test that the edit action returns the correct model(TaskControllerSpec.groovy:92)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.054">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.task == task&#xa;|     |    |  |&#xa;|     null |  com.tekdays.Task@6cde0c69&#xa;|          false&#xa;[taskInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  com.tekdays.Task@6cde0c69
+|          false
+[taskInstance:null]
+
+	at com.tekdays.TaskControllerSpec.Test the update action performs an update on a valid domain instance(TaskControllerSpec.groovy:114)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TaskControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.021" />
 
       <system-out><![CDATA[--Output from Test the index action returns the correct model--
 --Output from Test the create action returns the correct model--
@@ -186,41 +295,35 @@ Task.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="3" name="TekEventControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.311" timestamp="2021-10-25T13:19:02">
+  <testsuite errors="0" failures="2" hostname="sofs4" id="3" name="TekEventControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.322" timestamp="2021-10-26T11:59:29">
       <properties />
 
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the index action returns the correct model" time="0.139" />
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the index action returns the correct model" time="0.131" />
 
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the create action returns the correct model" time="0.022" />
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the create action returns the correct model" time="0.019" />
 
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the save action correctly persists an instance" time="0.03">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/tekEvent/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37e7c4cc&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-response.redirectedUrl == &apos;/tekEvent/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@37e7c4cc
-
-	at com.tekdays.TekEventControllerSpec.Test the save action correctly persists an instance(TekEventControllerSpec.groovy:57)
-</failure>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the show action returns the correct model" time="0.026" />
-
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the edit action returns the correct model" time="0.023" />
-
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.041">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.TekEventControllerSpec.Test the update action performs an update on a valid domain instance(TekEventControllerSpec.groovy:122)
-</error>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.023">
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the save action correctly persists an instance" time="0.028">
           <failure message="Condition not satisfied:&#xa;&#xa;TekEvent.count() == 1&#xa;         |       |&#xa;         0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
 TekEvent.count() == 1
+         |       |
+         0       false
+
+	at com.tekdays.TekEventControllerSpec.Test the save action correctly persists an instance(TekEventControllerSpec.groovy:59)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the show action returns the correct model" time="0.024" />
+
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the edit action returns the correct model" time="0.02" />
+
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.067" />
+
+      <testcase classname="com.tekdays.TekEventControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.024">
+          <failure message="Condition not satisfied:&#xa;&#xa;TekEvent.count() == 2&#xa;         |       |&#xa;         0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+TekEvent.count() == 2
          |       |
          0       false
 
@@ -248,10 +351,10 @@ TekEvent.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="sofs4" id="4" name="TekEventSpec" package="com.tekdays" skipped="0" tests="1" time="0.066" timestamp="2021-10-25T13:19:02">
+  <testsuite errors="0" failures="0" hostname="sofs4" id="4" name="TekEventSpec" package="com.tekdays" skipped="0" tests="1" time="0.067" timestamp="2021-10-26T11:59:29">
       <properties />
 
-      <testcase classname="com.tekdays.TekEventSpec" name="test toString" time="0.062" />
+      <testcase classname="com.tekdays.TekEventSpec" name="test toString" time="0.063" />
 
       <system-out><![CDATA[--Output from test toString--
 ]]></system-out>
@@ -260,48 +363,44 @@ TekEvent.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="5" name="TekMessageControllerSpec" package="com.tekdays" skipped="0" tests="7" time="2.332" timestamp="2021-10-25T13:18:59">
+  <testsuite errors="0" failures="2" hostname="sofs4" id="5" name="TekMessageControllerSpec" package="com.tekdays" skipped="0" tests="7" time="2.327" timestamp="2021-10-26T11:59:26">
       <properties />
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the index action returns the correct model" time="1.969" />
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the index action returns the correct model" time="1.901" />
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the create action returns the correct model" time="0.068" />
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the create action returns the correct model" time="0.088" />
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the save action correctly persists an instance" time="0.075">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/tekMessage/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@44bc2449&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the save action correctly persists an instance" time="0.149">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekMessage != null&#xa;|     |          |&#xa;[:]   null       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-response.redirectedUrl == &apos;/tekMessage/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@44bc2449
+model.tekMessage != null
+|     |          |
+[:]   null       false
 
-	at com.tekdays.TekMessageControllerSpec.Test the save action correctly persists an instance(TekMessageControllerSpec.groovy:57)
+	at com.tekdays.TekMessageControllerSpec.Test the save action correctly persists an instance(TekMessageControllerSpec.groovy:49)
 </failure>
 
       </testcase>
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the show action returns the correct model" time="0.027" />
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the show action returns the correct model" time="0.032" />
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the edit action returns the correct model" time="0.023" />
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the edit action returns the correct model" time="0.027" />
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.11">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.TekMessageControllerSpec.Test the update action performs an update on a valid domain instance(TekMessageControllerSpec.groovy:122)
-</error>
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.055">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekMessage == tekMessage&#xa;|     |          |  |&#xa;|     null       |  Subject: null, Author: null&#xa;|                false&#xa;[tekMessageInstance:Subject: null, Author: null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      </testcase>
+model.tekMessage == tekMessage
+|     |          |  |
+|     null       |  Subject: null, Author: null
+|                false
+[tekMessageInstance:Subject: null, Author: null]
 
-      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.026">
-          <failure message="Condition not satisfied:&#xa;&#xa;TekMessage.count() == 1&#xa;           |       |&#xa;           0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-TekMessage.count() == 1
-           |       |
-           0       false
-
-	at com.tekdays.TekMessageControllerSpec.Test that the delete action deletes an instance if it exists(TekMessageControllerSpec.groovy:142)
+	at com.tekdays.TekMessageControllerSpec.Test the update action performs an update on a valid domain instance(TekMessageControllerSpec.groovy:112)
 </failure>
 
       </testcase>
+
+      <testcase classname="com.tekdays.TekMessageControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.042" />
 
       <system-out><![CDATA[--Output from Test the index action returns the correct model--
 --Output from Test the create action returns the correct model--
@@ -322,48 +421,80 @@ TekMessage.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="1" failures="2" hostname="sofs4" id="6" name="TekUserControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.202" timestamp="2021-10-25T13:19:03">
+  <testsuite errors="0" failures="5" hostname="sofs4" id="6" name="TekUserControllerSpec" package="com.tekdays" skipped="0" tests="7" time="0.225" timestamp="2021-10-26T11:59:30">
       <properties />
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the index action returns the correct model" time="0.104" />
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the index action returns the correct model" time="0.089" />
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the create action returns the correct model" time="0.012" />
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the create action returns the correct model" time="0.013">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekUser!= null&#xa;|     |      |&#xa;|     null   false&#xa;[tekUserInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the save action correctly persists an instance" time="0.018">
-          <failure message="Condition not satisfied:&#xa;&#xa;response.redirectedUrl == &apos;/tekUser/show/1&apos;&#xa;|        |             |&#xa;|        null          false&#xa;org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@5c8ab9de&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+model.tekUser!= null
+|     |      |
+|     null   false
+[tekUserInstance:null]
 
-response.redirectedUrl == &apos;/tekUser/show/1&apos;
-|        |             |
-|        null          false
-org.codehaus.groovy.grails.plugins.testing.GrailsMockHttpServletResponse@5c8ab9de
-
-	at com.tekdays.TekUserControllerSpec.Test the save action correctly persists an instance(TekUserControllerSpec.groovy:57)
+	at com.tekdays.TekUserControllerSpec.Test the create action returns the correct model(TekUserControllerSpec.groovy:33)
 </failure>
 
       </testcase>
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the show action returns the correct model" time="0.013" />
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the save action correctly persists an instance" time="0.023">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekUser!= null&#xa;|     |      |&#xa;|     null   false&#xa;[tekUserInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the edit action returns the correct model" time="0.011" />
+model.tekUser!= null
+|     |      |
+|     null   false
+[tekUserInstance:null]
 
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.026">
-          <error message="Cannot get property &apos;id&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;id&apos; on null object
-	at com.tekdays.TekUserControllerSpec.Test the update action performs an update on a valid domain instance(TekUserControllerSpec.groovy:122)
-</error>
-
-      </testcase>
-
-      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.014">
-          <failure message="Condition not satisfied:&#xa;&#xa;TekUser.count() == 1&#xa;        |       |&#xa;        0       false&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
-
-TekUser.count() == 1
-        |       |
-        0       false
-
-	at com.tekdays.TekUserControllerSpec.Test that the delete action deletes an instance if it exists(TekUserControllerSpec.groovy:142)
+	at com.tekdays.TekUserControllerSpec.Test the save action correctly persists an instance(TekUserControllerSpec.groovy:46)
 </failure>
 
       </testcase>
+
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the show action returns the correct model" time="0.022">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekUser == tekUser&#xa;|     |       |  |&#xa;|     null    |  com.tekdays.TekUser@13aa54f1&#xa;|             false&#xa;[tekUserInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.tekUser == tekUser
+|     |       |  |
+|     null    |  com.tekdays.TekUser@13aa54f1
+|             false
+[tekUserInstance:null]
+
+	at com.tekdays.TekUserControllerSpec.Test that the show action returns the correct model(TekUserControllerSpec.groovy:75)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the edit action returns the correct model" time="0.017">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekUser == tekUser&#xa;|     |       |  |&#xa;|     null    |  com.tekdays.TekUser@74e4be21&#xa;|             false&#xa;[tekUserInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.tekUser == tekUser
+|     |       |  |
+|     null    |  com.tekdays.TekUser@74e4be21
+|             false
+[tekUserInstance:null]
+
+	at com.tekdays.TekUserControllerSpec.Test that the edit action returns the correct model(TekUserControllerSpec.groovy:91)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.036">
+          <failure message="Condition not satisfied:&#xa;&#xa;model.tekUser == tekUser&#xa;|     |       |  |&#xa;|     null    |  com.tekdays.TekUser@cfacf0&#xa;|             false&#xa;[tekUserInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.tekUser == tekUser
+|     |       |  |
+|     null    |  com.tekdays.TekUser@cfacf0
+|             false
+[tekUserInstance:null]
+
+	at com.tekdays.TekUserControllerSpec.Test the update action performs an update on a valid domain instance(TekUserControllerSpec.groovy:113)
+</failure>
+
+      </testcase>
+
+      <testcase classname="com.tekdays.TekUserControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.018" />
 
       <system-out><![CDATA[--Output from Test the index action returns the correct model--
 --Output from Test the create action returns the correct model--
@@ -384,10 +515,10 @@ TekUser.count() == 1
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="sofs4" id="7" name="TekUserSpec" package="com.tekdays" skipped="0" tests="1" time="0.058" timestamp="2021-10-25T13:19:02">
+  <testsuite errors="0" failures="0" hostname="sofs4" id="7" name="TekUserSpec" package="com.tekdays" skipped="0" tests="1" time="0.057" timestamp="2021-10-26T11:59:29">
       <properties />
 
-      <testcase classname="com.tekdays.TekUserSpec" name="test toString" time="0.053" />
+      <testcase classname="com.tekdays.TekUserSpec" name="test toString" time="0.052" />
 
       <system-out><![CDATA[--Output from test toString--
 ]]></system-out>

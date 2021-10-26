@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="5" hostname="sofs4" name="com.tekdays.SponsorControllerSpec" skipped="0" tests="7" time="0.299" timestamp="2021-10-26T11:59:29">
+  <properties />
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the index action returns the correct model" time="0.123" />
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the create action returns the correct model" time="0.024">
+    <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor!= null&#xa;|     |      |&#xa;|     null   false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test the create action returns the correct model(SponsorControllerSpec.groovy:35)
+</failure>
+  </testcase>
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the save action correctly persists an instance" time="0.024">
+    <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor!= null&#xa;|     |      |&#xa;|     null   false&#xa;[sponsorInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:null]
+
+	at com.tekdays.SponsorControllerSpec.Test the save action correctly persists an instance(SponsorControllerSpec.groovy:49)
+</failure>
+  </testcase>
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the show action returns the correct model" time="0.025">
+    <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  420&#xa;|             false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test that the show action returns the correct model(SponsorControllerSpec.groovy:75)
+</failure>
+  </testcase>
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the edit action returns the correct model" time="0.023">
+    <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  420&#xa;|             false&#xa;[sponsorInstance:420]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test that the edit action returns the correct model(SponsorControllerSpec.groovy:91)
+</failure>
+  </testcase>
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test the update action performs an update on a valid domain instance" time="0.036">
+    <failure message="Condition not satisfied:&#xa;&#xa;model.sponsor == sponsor&#xa;|     |       |  |&#xa;|     null    |  com.tekdays.Sponsor@6533629&#xa;|             false&#xa;[sponsorInstance:null]&#xa;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  com.tekdays.Sponsor@6533629
+|             false
+[sponsorInstance:null]
+
+	at com.tekdays.SponsorControllerSpec.Test the update action performs an update on a valid domain instance(SponsorControllerSpec.groovy:112)
+</failure>
+  </testcase>
+  <testcase classname="com.tekdays.SponsorControllerSpec" name="Test that the delete action deletes an instance if it exists" time="0.037" />
+  <system-out><![CDATA[--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+]]></system-out>
+  <system-err><![CDATA[--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+]]></system-err>
+</testsuite>

@@ -40,7 +40,7 @@ class TekMessageController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'tekMessage.label', default: 'TekMessage'), tekMessageInstance.id])
-                redirect tekMessageInstance
+                redirect action: "show", id:  tekMessageInstance.id
             }
             '*' { respond tekMessageInstance, [status: CREATED] }
         }

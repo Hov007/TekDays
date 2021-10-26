@@ -1,6 +1,8 @@
 import com.tekdays.*
 
 class BootStrap {
+    TaskService taskService
+
     def init = { servletContext ->
         if (!TekEvent.list()) {
             new TekUser(
@@ -44,7 +46,12 @@ Camp.''')
                     println "An error occured with event1: ${error}"
                 }
             }
-            def event2 = new TekEvent(name: 'Perl Before Swine',
+            taskService.addDefaultTasks(event1)
+
+
+            //def event2 = new Task
+
+            def event3 = new TekEvent(name: 'Perl Before Swine',
                     city: 'Austin, MN',
                     organizer: TekUser.findByFullName('John Deere'),
                     venue: 'SPAM Museum',
@@ -58,11 +65,12 @@ chops in our programming challenge.
 Come and join us in historic (and aromatic),
 Austin, Minnesota. You'll know when you're
 there!''')
-            if (!event2.save()) {
-                event2.errors.allErrors.each { error ->
+            if (!event3.save()) {
+                event3.errors.allErrors.each { error ->
                     println "An error occured with event2: ${error}"
                 }
             }
+            taskService.addDefaultTasks(event3)
             def g1 = TekEvent.findByName('Gateway Code Camp')
             g1.addToVolunteers(new TekUser(fullName: 'Sarah Martin',
                     userName: 'sarah',

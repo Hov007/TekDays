@@ -1,0 +1,123 @@
+Testsuite: com.tekdays.TaskControllerSpec
+Tests run: 7, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.273 sec
+------------- Standard Output ---------------
+--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+------------- ---------------- ---------------
+
+Testcase: Test the index action returns the correct model took 0.111 sec
+Testcase: Test the create action returns the correct model took 0.019 sec
+	FAILED
+Condition not satisfied:
+
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:420]
+
+	at com.tekdays.TaskControllerSpec.Test the create action returns the correct model(TaskControllerSpec.groovy:33)
+
+Testcase: Test the save action correctly persists an instance took 0.02 sec
+	FAILED
+Condition not satisfied:
+
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:null]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task!= null
+|     |   |
+|     |   false
+|     null
+[taskInstance:null]
+
+	at com.tekdays.TaskControllerSpec.Test the save action correctly persists an instance(TaskControllerSpec.groovy:47)
+
+Testcase: Test that the show action returns the correct model took 0.021 sec
+	FAILED
+Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+	at com.tekdays.TaskControllerSpec.Test that the show action returns the correct model(TaskControllerSpec.groovy:76)
+
+Testcase: Test that the edit action returns the correct model took 0.018 sec
+	FAILED
+Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  420
+|          false
+[taskInstance:420]
+
+	at com.tekdays.TaskControllerSpec.Test that the edit action returns the correct model(TaskControllerSpec.groovy:92)
+
+Testcase: Test the update action performs an update on a valid domain instance took 0.053 sec
+	FAILED
+Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  com.tekdays.Task@6cde0c69
+|          false
+[taskInstance:null]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.task == task
+|     |    |  |
+|     null |  com.tekdays.Task@6cde0c69
+|          false
+[taskInstance:null]
+
+	at com.tekdays.TaskControllerSpec.Test the update action performs an update on a valid domain instance(TaskControllerSpec.groovy:114)
+
+Testcase: Test that the delete action deletes an instance if it exists took 0.021 sec

@@ -1,0 +1,119 @@
+Testsuite: com.tekdays.SponsorControllerSpec
+Tests run: 7, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.299 sec
+------------- Standard Output ---------------
+--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from Test the index action returns the correct model--
+--Output from Test the create action returns the correct model--
+--Output from Test the save action correctly persists an instance--
+--Output from Test that the show action returns the correct model--
+--Output from Test that the edit action returns the correct model--
+--Output from Test the update action performs an update on a valid domain instance--
+--Output from Test that the delete action deletes an instance if it exists--
+------------- ---------------- ---------------
+
+Testcase: Test the index action returns the correct model took 0.123 sec
+Testcase: Test the create action returns the correct model took 0.024 sec
+	FAILED
+Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test the create action returns the correct model(SponsorControllerSpec.groovy:35)
+
+Testcase: Test the save action correctly persists an instance took 0.023 sec
+	FAILED
+Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:null]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor!= null
+|     |      |
+|     null   false
+[sponsorInstance:null]
+
+	at com.tekdays.SponsorControllerSpec.Test the save action correctly persists an instance(SponsorControllerSpec.groovy:49)
+
+Testcase: Test that the show action returns the correct model took 0.025 sec
+	FAILED
+Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test that the show action returns the correct model(SponsorControllerSpec.groovy:75)
+
+Testcase: Test that the edit action returns the correct model took 0.023 sec
+	FAILED
+Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  420
+|             false
+[sponsorInstance:420]
+
+	at com.tekdays.SponsorControllerSpec.Test that the edit action returns the correct model(SponsorControllerSpec.groovy:91)
+
+Testcase: Test the update action performs an update on a valid domain instance took 0.036 sec
+	FAILED
+Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  com.tekdays.Sponsor@6533629
+|             false
+[sponsorInstance:null]
+
+junit.framework.AssertionFailedError: Condition not satisfied:
+
+model.sponsor == sponsor
+|     |       |  |
+|     null    |  com.tekdays.Sponsor@6533629
+|             false
+[sponsorInstance:null]
+
+	at com.tekdays.SponsorControllerSpec.Test the update action performs an update on a valid domain instance(SponsorControllerSpec.groovy:112)
+
+Testcase: Test that the delete action deletes an instance if it exists took 0.037 sec
