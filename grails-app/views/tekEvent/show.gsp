@@ -4,7 +4,7 @@
 <head>
     <meta name="layout" content="main">
     <g:set var="entityName" value="${message(code: 'tekEvent.label', default: 'TekEvent')}"/>
-    <title><g:message code="default.show.label" args="[entityName]"/></title>
+    <title><g:message code="default.show.label" args="[entityName]"/></title>F
 </head>
 
 <body>
@@ -143,7 +143,7 @@
         <g:if test="${tekEventInstance?.tasks}">
             <li class="fieldcontain">
                 <span id="tasks-label" class="property-label"><g:message
-                        code="tekEvent.tasks.label" default="Tasks" /></span>
+                        code="tekEvent.tasks.label" default="Tasks"/></span>
                 <g:each in="${tekEventInstance.tasks}" var="t">
                     <span class="property-value" aria-labelledby="tasks-label">
                         <g:link controller="task" action="show"
@@ -151,6 +151,8 @@
                 </g:each>
             </li>
         </g:if>
+
+
 
     </ol>
     <g:form url="[resource: tekEventInstance, action: 'delete']" method="DELETE">

@@ -17,10 +17,10 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image  src="3.jpeg" alt="TekDays"/>
+		<div id="grailsLogo" role="banner"><a href="/TekDays/"><asset:image style="margin-left: 25%; height:450px; width: 1200px" src="3.jpeg" alt="TekDays"/>
 		</a></div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		<!--<div class="footer" role="contentinfo"></div>-->
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

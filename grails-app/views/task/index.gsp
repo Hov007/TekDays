@@ -27,13 +27,15 @@
 						<g:sortableColumn property="title" title="${message(code: 'task.title.label', default: 'Title')}" />
 					
 						<g:sortableColumn property="notes" title="${message(code: 'task.notes.label', default: 'Notes')}" />
-					
+
 						<th><g:message code="task.assignedTo.label" default="Assigned To" /></th>
 					
 						<g:sortableColumn property="dueDate" title="${message(code: 'task.dueDate.label', default: 'Due Date')}" />
-					
+
+						<th><g:message code="task.completed.label" default="Completed" /></th>
+
 						<th><g:message code="task.event.label" default="Event" /></th>
-					
+
 					</tr>
 				</thead>
 				<tbody>
@@ -47,7 +49,10 @@
 						<td>${fieldValue(bean: taskInstance, field: "assignedTo")}</td>
 					
 						<td><g:formatDate date="${taskInstance.dueDate}" /></td>
-					
+
+					<td><g:formatBoolean boolean="${taskInstance?.completed}"
+										 true="Yes" false="No"/></td>
+
 						<td>${fieldValue(bean: taskInstance, field: "event")}</td>
 					
 					</tr>
