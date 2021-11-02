@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/>Home</title>
+		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
@@ -17,10 +17,12 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="/TekDays/"><asset:image style="margin-left: 25%; height:450px; width: 1200px" src="3.jpeg" alt="TekDays"/>
+		<div id="grailsLogo" role="banner"><a href="/TekDays/"><asset:image style="height:200px; width: 930px" src="7.png" alt="TekDays"/>
 		</a></div>
 		<g:layoutBody/>
-		<!--<div class="footer" role="contentinfo"></div>-->
+
+		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+
 	</body>
 </html>
