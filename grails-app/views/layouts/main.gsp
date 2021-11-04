@@ -17,8 +17,9 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="/TekDays/"><asset:image style="height:200px; width: 930px" src="7.png" alt="TekDays"/>
-		</a></div>
+		<div id="grailsLogo" role="banner"><a href="/TekDays/"><asset:image style="height:200px; width: 930px" src="7.png" alt="TekDays"/></a>
+			<g:loginToggle/>
+		</div>
 		<g:layoutBody/>
 
 		<div class="footer" role="contentinfo"></div>

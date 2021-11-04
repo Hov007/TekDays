@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
 }
 
+
+
 /* BASE LAYOUT */
 
 html {
@@ -45,6 +47,10 @@ body {
     -moz-box-shadow: 0 0 0.3em rgb(8,66,104);
     -webkit-box-shadow: 0 0 0.3em rgb(8,66,104);;
     box-shadow: 0 0 0.3em #2592b5;
+}
+
+#aa {
+    color: rgb(8,66,104) !important;
 }
 
 #grailsLogo {
