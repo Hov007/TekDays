@@ -97,6 +97,24 @@ class TekUserController {
         }
     }
 
+//    def register = {
+//        if (request.method == 'POST') {
+//            def tekUser = new TekUser(params)
+//            tekUser.passwordHashed = tekUser.password.encodeAsPassword()
+//            if (!tekUser()) {
+//                return [user: tekUser]
+//            }
+//            else {
+//                session.user = tekUser
+//                redirect(controller: 'tekEvent', action: 'index')
+//
+//            }
+//        }
+//        else if (session.user) {
+//            redirect(controller: 'tekEvent', action: 'index')
+//        }
+//    }
+
     def validate() {
         def user = TekUser.findByUserName(params.username)
         if (user && user.password == params.password) {

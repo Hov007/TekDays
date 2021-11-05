@@ -45,8 +45,6 @@ class TekMessageController {
     }
 
     def showDetail() {
-        def user = session.user
-        println(user)
         def tekMessageInstance = TekMessage.get(params.id)
         def a = "Hola"
         if (tekMessageInstance) {
