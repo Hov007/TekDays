@@ -8,6 +8,7 @@ class TekEvent {
     Date startDate
     Date endDate
     String description
+    String nickname
 
     static hasMany = [volunteers : TekUser, respondents: String, sponsorships : Sponsorship, tasks: Task, messages: TekMessage]
 
@@ -26,5 +27,6 @@ class TekEvent {
         sponsorships nullable: true
         tasks nullable: true
         messages nullable: true
+        nickname nullable: true
     }
 }

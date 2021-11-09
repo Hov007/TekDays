@@ -36,4 +36,57 @@ class TekDaysTagLib {
         }
         out << "</div><br/>"
     }
+    def organizerEvents = {
+        if (request.getSession(false) && session.user) {
+            def events = TekEvent.findAllByOrganizer(session.user)
+            if (events) {
+                out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
+                out << "<h3>Events you are organizing:</h3>"
+                out << "<ol>"
+                events.each {
+                    out << "<li><a href='"
+                    out << "${createLink(controller: 'tekEvent', action: 'show', id: it.id)}'>"
+                    out << "${it}</a></li>"
+                }
+                out << "</ol>"
+                out << "</div>"
+            }
+        }
+    }
+
+    def volunteerEvents = {
+        if (request.getSession(false) && session.user) {
+            def events = TekEvent.createCriteria().list {
+                volunteers {
+                    eq('id', session.user?.id)
+                }
+            }
+            if (events) {
+                out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
+                out << "<h3>Events you volunteered for:</h3>"
+                out << "<ul>"
+                events.each {
+                    out << "<li><a href='"
+                    out << "${createLink(controller: 'tekEvent', action: 'show', id: it.id)}'>"
+                    out << "${it}</a></li>"
+                }
+                out << "</ul>"
+                out << "</div>"
+            }
+        }
+    }
+
+    def volunteerButton = { attrs ->
+        if (request.getSession(false) && session.user) {
+            def user = session.user.merge()
+            def event = TekEvent.get(attrs.eventId)
+            if (event && !event.volunteers.contains(user)) {
+                out << "<span id='volunteerSpan' class='menuButton'>"
+                out << "<button id='volunteerButton' type='button'>"
+                out << "Volunteer For This Event"
+                out << "</button>"
+                out << "</span>"
+            }
+        }
+    }
 }

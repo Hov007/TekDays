@@ -4,12 +4,16 @@
     <meta name="layout" content="main"/>
     <title>TekDays - The Community is the Conference!</title>
 </head>
+
 <body>
+<g:organizerEvents/>
+<g:volunteerEvents/>
 <div id="welcome">
     <br/>
 
     <h3>Welcome to TekDays.com</h3>
     <br>
+
     <p>TekDays.com is a site dedicated to assisting individuals and
     communities to organize technology conferences. To bring great
     minds with common interests and passions together for the good
@@ -20,6 +24,7 @@
 <div class="homeCell">
     <h3>Find a Tek Event</h3>
     <br>
+
     <p>See if there's a technical event in the works that strikes your
     fancy. If there is, you can volunteer to help or just let the
     organizers know that you'd be interested in attending.
@@ -33,6 +38,7 @@
 <div class="homeCell">
     <h3>Organize a Tek Event</h3>
     <br>
+
     <p>If you don't see anything that suits your interest and location,
     then why not get the ball rolling. It's easy to get started and
     there may be others out there ready to get behind you to make it
@@ -46,6 +52,7 @@
 <div class="homeCell">
     <h3>Sponsor a Tek Event</h3>
     <br>
+
     <p>If you are part of a business or organization that is involved in
     technology then sponsoring a tek event would be a great way to
     let the community know that you're there and you're involved.</p>
