@@ -1,13 +1,13 @@
 package com.tekdays
 
-
+import org.hibernate.envers.query.AuditQuery
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TaskController {
-
+    def datatablesSourceService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -17,6 +17,12 @@ class TaskController {
 
     def show(Task taskInstance) {
         respond taskInstance
+    }
+
+    def dataTablesRenderer() {
+        def propertiesToRender = ["title", "notes", "assignedTo", "dueDate", "completed", "event", "id"]
+        def entityName = "Task"
+        render datatablesSourceService.dataTablesSource(propertiesToRender, entityName, params)
     }
 
     def create() {
@@ -91,6 +97,21 @@ class TaskController {
             '*'{ render status: NO_CONTENT }
         }
     }
+
+//    def revisions() {
+//        def auditQueryCreator = AuditReaderFactory.get(sessionFactory.currentSession).createQuery()
+//
+//        def revisionList = []
+//        AuditQuery query = auditQueryCreator.forRevisionsOfEntity(Task.class, false, true)
+//        query.resultList.each {
+//            if(it[0].id==params.getLong('id')) {
+//                revisionList.add(it)
+//            }
+//        }
+//        [revisionList: revisionList]
+//    }
+
+
 
     protected void notFound() {
         request.withFormat {

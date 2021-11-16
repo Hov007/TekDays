@@ -34,6 +34,8 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
+
+
     <ol class="property-list tekEvent">
 
         <g:if test="${tekEventInstance?.description}">
@@ -184,7 +186,7 @@
     $(document).ready(function () {
         $('#volunteerDialog').hide();
         $("#volunteerButton").click(function () {
-            debugger;
+            // debugger;
             $("#volunteerDialog").dialog({
                 resizable: false,
                 height: 180,

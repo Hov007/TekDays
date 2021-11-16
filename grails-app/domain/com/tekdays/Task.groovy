@@ -1,7 +1,9 @@
 package com.tekdays
 
-class Task {
+import org.hibernate.envers.Audited
 
+@Audited
+class Task {
     String title
     String notes
     TekUser assignedTo

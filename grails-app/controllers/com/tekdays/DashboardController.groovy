@@ -1,5 +1,8 @@
 package com.tekdays
 
+import grails.transaction.Transactional
+
+@Transactional(readOnly = true)
 class DashboardController {
 
     def index() {}

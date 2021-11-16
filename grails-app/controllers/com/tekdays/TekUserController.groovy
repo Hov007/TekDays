@@ -91,6 +91,9 @@ class TekUserController {
         }
     }
 
+    def register() {
+    }
+
     def login() {
         if (params.cName) {
             return [cName: params.cName, aName: params.aName]

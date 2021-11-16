@@ -1,26 +1,44 @@
 package com.tekdays
 
+import org.hibernate.envers.query.AuditQuery
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TekEventController {
-
+    def datatablesSourceService
     def taskService
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", revisions: "PUT"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond TekEvent.list(params), model: [tekEventInstanceCount: TekEvent.count()]
-    }
+    def index() {}
 
-    def volunteer = {
+    @Transactional
+    def volunteer() {
         def event = TekEvent.get(params.id)
         event.addToVolunteers(session.user)
         event.save flush: true //remember about this f flush: true
         render "Thank you for Volunteering"
     }
+
+    def dataTablesRenderer() {
+        def propertiesToRender = ["name", "city","description", "venue", "startDate", "id"]
+        def entityName = 'TekEvent'
+        render datatablesSourceService.dataTablesSource(propertiesToRender, entityName, params)
+    }
+
+//    def revisions() {
+//        def auditQueryCreator = AuditReaderFactory.get(sessionFactory.currentSession).createQuery()
+//
+//        def revisionList = []
+//        AuditQuery query = auditQueryCreator.forRevisionsOfEntity(TekEvent.class, false, true)
+//        query.resultList.each {
+//            if(it[0].id==params.getLong('id')) {
+//                revisionList.add(it)
+//            }
+//        }
+//        [revisionList: revisionList]
+//    }
 
     def show(Long id) {
         def tekEventInstance
@@ -40,7 +58,7 @@ class TekEventController {
         }
         [tekEventInstance: tekEventInstance]
     }
-
+    @Transactional
     def create() {
         respond new TekEvent(params)
         //[tekEventInstance: tekEventInstance]

@@ -27,7 +27,7 @@
 			</g:hasErrors>
 			<g:form url="[resource:taskInstance, action:'save']" >
 				<fieldset class="form">
-					<g:render template="form"/>
+					<g:render template="form" model="[task: taskInstance]"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

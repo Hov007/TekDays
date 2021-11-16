@@ -820,7 +820,7 @@ body .ui-tooltip {
 }
 .ui-widget-header {
 	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
-	background: #cccccc/*{bgColorHeader}*/ url(images/ui-bg_highlight-soft_75_cccccc_1x100.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+	background: #cccccc/*{bgColorHeader}*/ url()/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
 	color: #222222/*{fcHeader}*/;
 	font-weight: bold;
 }
@@ -834,7 +834,7 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
 	border: 1px solid #d3d3d3/*{borderColorDefault}*/;
-	background: #e6e6e6/*{bgColorDefault}*/ url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+	background: #e6e6e6/*{bgColorDefault}*/ url()/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
 	font-weight: normal/*{fwDefault}*/;
 	color: #555555/*{fcDefault}*/;
 }
@@ -947,7 +947,7 @@ body .ui-tooltip {
 	background-image: url(images/ui-icons_222222_256x240.png)/*{iconsHeader}*/;
 }
 .ui-state-default .ui-icon {
-	background-image: url(images/ui-icons_888888_256x240.png)/*{iconsDefault}*/;
+	background-image: url()/*{iconsDefault}*/;
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {

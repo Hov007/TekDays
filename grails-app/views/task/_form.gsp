@@ -1,15 +1,13 @@
 <%@ page import="com.tekdays.Task" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'title', 'error')} required">
     <label for="title">
         <g:message code="task.title.label" default="Title"/>
         <span class="required-indicator">*</span>
     </label>
     <g:textField name="title" required="" value="${taskInstance?.title}"/>
-
 </div>
+
 
 <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'notes', 'error')} ">
     <label for="notes">
@@ -35,7 +33,7 @@
         <g:message code="task.dueDate.label" default="Due Date"/>
 
     </label>
-    <g:datePicker name="dueDate" precision="day" value="${taskInstance?.dueDate}" default="none"
+    <g:datePicker name="dueDate" precision="day" value="${taskInstance?.dueDate}" default="none" years="${2021..2025}"
                   noSelection="['': '']"/>
 
 </div>
@@ -46,7 +44,7 @@
         <span class="required-indicator">*</span>
     </label>
     <g:select id="event" name="event.id" from="${com.tekdays.TekEvent.list()}" optionKey="id" required=""
-              value="${taskInstance?.event?.id}" class="many-to-one"/>
+               value="${taskInstance?.event?.id}" class="many-to-one"/>
 
     <div class="fieldcontain ${hasErrors(bean: taskInstance, field: 'completed',
             'error')} ">

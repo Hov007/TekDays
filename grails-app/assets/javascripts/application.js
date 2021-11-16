@@ -7,6 +7,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require datatables
 //= require_tree .
 //= require_self
 
