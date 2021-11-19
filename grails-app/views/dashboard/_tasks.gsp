@@ -1,4 +1,4 @@
-<h3>Things to do</h3>
+<h3 id="textTitles">Things to do</h3>
 <table>
     <thead>
     <tr>

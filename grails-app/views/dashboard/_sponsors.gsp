@@ -1,4 +1,4 @@
-<h3>Sponsors</h3>
+<h3 id="textTitles">Sponsors</h3>
 <table>
     <thead>
     <tr>

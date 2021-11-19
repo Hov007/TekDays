@@ -1,4 +1,4 @@
-<h3>Volunteers</h3>
+<h3 id="textTitles">Volunteers</h3>
 <table>
     <thead>
     <tr>

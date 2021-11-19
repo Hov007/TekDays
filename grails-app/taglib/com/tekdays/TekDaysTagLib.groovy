@@ -36,19 +36,33 @@ class TekDaysTagLib {
         }
         out << "</div><br/>"
     }
+
+//    def registerToggle = {
+//        if (request.getSession(false) && session.user) {
+//            out << "<span style='float:left; margin-left: 15px'>"
+//
+//
+//        } else {
+//            out << "<span style='float:right;margin-right:10px'>"
+//            out << "<a href='${createLink(controller: 'tekUser', action: 'register')}'>"
+//            out << "Register </a></span>"
+//        }
+//    }
+
     def organizerEvents = {
         if (request.getSession(false) && session.user) {
             def events = TekEvent.findAllByOrganizer(session.user)
             if (events) {
                 out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
-                out << "<h3>Events you are organizing:</h3>"
+                out << "<h3 id=\"textTitles\">Events you are organizing:</h3>"
                 out << "<ol>"
                 events.each {
-                    out << "<li><a href='"
+                    out << "<li id='evn'><a href='"
                     out << "${createLink(controller: 'tekEvent', action: 'show', id: it.id)}'>"
                     out << "${it}</a></li>"
                 }
                 out << "</ol>"
+                out << "<span class=\"buttons\"></span>"
                 out << "</div>"
             }
         }
@@ -63,14 +77,15 @@ class TekDaysTagLib {
             }
             if (events) {
                 out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
-                out << "<h3>Events you volunteered for:</h3>"
-                out << "<ul>"
+                out << "<h3 id=\"textTitles\">Events you volunteered for:</h3>"
+//                out << "<ul>"
                 events.each {
-                    out << "<li><a href='"
+                    out << "<li id='asd'><a href='"
                     out << "${createLink(controller: 'tekEvent', action: 'show', id: it.id)}'>"
                     out << "${it}</a></li>"
                 }
                 out << "</ul>"
+                out << "<span class=\"buttons\"></span>"
                 out << "</div>"
             }
         }
@@ -82,8 +97,8 @@ class TekDaysTagLib {
             def event = TekEvent.get(attrs.eventId)
             if (event && !event.volunteers.contains(user)) {
                 out << "<span id='volunteerSpan' class='menuButton'>"
-                out << "<button id='volunteerButton' type='button'>"
-                out << "Volunteer For This Event"
+                out << "<button id='volunteerButton' type='button'><i class=\"fas fa-handshake\"> </i>"
+                out << "_Volunteer For This Event"
                 out << "</button>"
                 out << "</span>"
             }
