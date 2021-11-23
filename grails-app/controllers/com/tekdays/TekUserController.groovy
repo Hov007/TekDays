@@ -10,6 +10,7 @@ class TekUserController {
     static allowedMethods = [register: "POST", save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
+
         params.max = Math.min(max ?: 10, 100)
         respond TekUser.list(params), model: [tekUserInstanceCount: TekUser.count()]
     }

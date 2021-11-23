@@ -4,12 +4,16 @@ import grails.converters.JSON
 import grails.transaction.Transactional
 import org.codehaus.groovy.grails.commons.GrailsApplication
 import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 @Transactional(readOnly = true)
 class DatatablesSourceService implements GrailsApplicationAware {
     GrailsApplication grailsApplication
+    private static final Logger LOGGER = LoggerFactory.getLogger(DatatablesSourceService.class)
 
     def dataTablesSource(propertiesToRender, entityName, params) {
+        def timer = System.currentTimeMillis()
         boolean someFilter = false
         Class clazz = grailsApplication.domainClasses.find { it.clazz.simpleName == entityName }.clazz
 
@@ -95,6 +99,7 @@ class DatatablesSourceService implements GrailsApplicationAware {
             dataToRender.aaData << data
         }
 
+        LOGGER.info("Execution of dataTablesSource method took {} Ms", System.currentTimeMillis() - timer)
         return dataToRender as JSON
     }
 }

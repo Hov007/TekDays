@@ -23,7 +23,7 @@
         <li>
             <g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]"/></g:link>
         </li>
-        <li id="dsh"><g:link class="list" controller="dashboard" action="dashboard"
+        <li id="dsh"><g:link style="color: white" class="list" controller="dashboard" action="dashboard"
                     id="${tekEventInstance.id}">Event Dashboard</g:link></li>
         <li><g:volunteerButton eventId="${tekEventInstance.id}"/></li>
     </ul>
