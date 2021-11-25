@@ -12,6 +12,7 @@ class TekEvent {
     Date endDate
     String description
     String nickname
+    Date lastUpdated
 
     static hasMany = [volunteers : TekUser, respondents: String, sponsorships : Sponsorship, tasks: Task, messages: TekMessage]
 

@@ -34,6 +34,25 @@
                         aTargets: [0]
                     },
                     {
+                        render: function(data) {
+                          if (data) {
+                              let d = new Date(data);
+                                month = '' + (d.getMonth() + 1),
+                                day = '' + d.getDate(),
+                                year = d.getFullYear();
+                              if (month.length < 2)
+                                    month = '0' + month;
+                                if (day.length < 2)
+                                    day = '0' + day;
+
+                                return [year, month, day].join('/');
+                          } else {
+                              return "-";
+                          }
+                        },
+                        aTargets: [3]
+                    },
+                    {
                         render: function (data) {
                             if (data === "true") {
                                 return "Yes";

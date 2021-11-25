@@ -14,58 +14,8 @@ class TekEventController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", revisions: "PUT"]
     private static final Logger LOGGER = LoggerFactory.getLogger(TekEventController.class)
 
-    def index() {
-        // Querying Associations with Criteria
-//        def criteria = TekEvent.withCriteria {
-//            organizer {
-//                ilike('userName', '%jdoe%')
-//            }
-//        }
-//        println(criteria)
+    def index() {}
 
-        // Querying with Projections
-//        def criteria = TekEvent.createCriteria()
-//        def count = criteria.get {
-//            projections {
-//                countDistinct('name')
-//            }
-//            organizer {
-//                eq('userName', 'sarah')
-//            }
-//        }
-//        println(criteria)
-//        println(count)
-        // A Simple Criteria Query
-//        def events = TekEvent.createCriteria()
-//        def results = events.list {
-//            eq('city', 'Madrid   ')
-//            like('name', '%Mad%')
-//        }
-//        println(results)
-
-        // Dynamic Querying with Criteria
-//        def queryMap = [city: 'Madrid']
-//        def query = {
-//            queryMap.each { key, value ->
-//                if (value instanceof List) {
-//                    println("yes it is")
-//                }
-//                else {
-//                    like(key, value)
-//                }
-//            }
-//        }
-//        def events1 = TekEvent.createCriteria()
-//        println events1.list(query)
-        //  HQL via the findAll Method
-//        def event = TekEvent.find('from TekEvent as a where a.name = ?',
-//                            ['Real Madrid C.F.'])
-//        println(event)
-
-
-//        def results = TekEvent.list(max: 2, offset: 2)
-//        println(results)
-    }
 
     @Transactional
     def volunteer() {
@@ -76,7 +26,7 @@ class TekEventController {
     }
 
     def dataTablesRenderer() {
-        def propertiesToRender = ["name", "city", "description", "venue", "startDate", "id"]
+        def propertiesToRender = ["name", "city", "description", "venue", "startDate", "lastUpdated", "id"]
         def entityName = 'TekEvent'
         render datatablesSourceService.dataTablesSource(propertiesToRender, entityName, params)
     }

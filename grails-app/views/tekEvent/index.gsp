@@ -24,7 +24,8 @@
                     {
                          render: function (data, type, full, meta) {
                             if (full) {
-                                return '<a href="${createLink(controller: 'TekEvent', action: 'show')}/'+ full[5] +'" class="btn">' + data + '</a>';
+                                return '<a href="${createLink(controller: 'TekEvent', action: 'show')}/'+ full[6] +'"
+                                           class="btn">' + data + '</a>';
                             } else {
                                 return data;
                             }
@@ -32,8 +33,27 @@
                         aTargets: [0]
                     },
                     {
+                        render: function(data) {
+                          if (data) {
+                              let d = new Date(data);
+                                month = '' + (d.getMonth() + 1),
+                                day = '' + d.getDate(),
+                                year = d.getFullYear();
+                              if (month.length < 2)
+                                    month = '0' + month;
+                                if (day.length < 2)
+                                    day = '0' + day;
+
+                                return [year, month, day].join('/');
+                          } else {
+                              return "-";
+                          }
+                        },
+                        aTargets: [4, 5]
+                    },
+                    {
                          visible: false,
-                        aTargets: [5]
+                        aTargets: [6]
                     }
                 ]
             });
@@ -66,6 +86,7 @@
             <th>Description</th>
             <th>Venue</th>
             <th>Start Date</th>
+            <th>Last Updated</th>
             <th></th>
         </tr>
         </thead>
@@ -77,6 +98,7 @@
             <th>Description</th>
             <th>Venue</th>
             <th>Start Date</th>
+            <th>Last Updated</th>
             <th></th>
         </tr>
         </tfoot>
