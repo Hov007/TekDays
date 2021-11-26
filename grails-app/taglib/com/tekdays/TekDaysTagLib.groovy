@@ -25,14 +25,14 @@ class TekDaysTagLib {
         out << "<div style='margin: 15px 0 40px;'>"
         if (request.getSession(false) && session.user) {
             out << "<span style='float:left; margin-left: 15px'>"
-            out << "Welcome ${session.user}."
+            out << "${message(code: 'tekDays.welcome')} ${session.user}."
             out << "</span><span style='float:right;margin-right:15px'>"
             out << "<a href='${createLink(controller: 'tekUser', action: 'logout')}'>"
-            out << "Logout </a></span>"
+            out << "${message(code: 'tekDays.logout')} </a></span>"
         } else {
             out << "<span style='float:right;margin-right:10px'>"
             out << "<a href='${createLink(controller: 'tekUser', action: 'login')}'>"
-            out << "Login </a></span>"
+            out << "${message(code: 'tekDays.login')} </a></span>"
         }
         out << "</div><br/>"
     }
@@ -54,7 +54,7 @@ class TekDaysTagLib {
             def events = TekEvent.findAllByOrganizer(session.user)
             if (events) {
                 out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
-                out << "<h3 id=\"textTitles\">Events you are organizing:</h3>"
+                out << "<h3 id=\"textTitles\">${message(code: 'tekDays.event.organizing')}</h3>"
                 out << "<ol>"
                 events.each {
                     out << "<li id='evn'><a href='"
@@ -77,7 +77,7 @@ class TekDaysTagLib {
             }
             if (events) {
                 out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
-                out << "<h3 id=\"textTitles\">Events you volunteered for:</h3>"
+                out << "<h3 id=\"textTitles\">${message(code: 'tekDays.event.volunteered')}</h3>"
 //                out << "<ul>"
                 events.each {
                     out << "<li id='asd'><a href='"

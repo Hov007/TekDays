@@ -24,8 +24,7 @@
                     {
                          render: function (data, type, full, meta) {
                             if (full) {
-                                return '<a href="${createLink(controller: 'TekEvent', action: 'show')}/'+ full[6] +'"
-                                           class="btn">' + data + '</a>';
+                                return '<a href="${createLink(controller: 'TekEvent', action: 'show')}/'+ full[6] +'"class="btn">' + data + '</a>';
                             } else {
                                 return data;
                             }
@@ -81,24 +80,23 @@
     <table id="dt">
         <thead>
         <tr>
-            <th id="lol">Name</th>
-            <th>City</th>
-            <th>Description</th>
-            <th>Venue</th>
-            <th>Start Date</th>
-            <th>Last Updated</th>
+            <th id="lol"><g:message code="tekDays.Name"/></th>
+            <th><g:message code="tekDays.City"/></th>
+            <th><g:message code="tekDays.Description"/></th>
+            <th><g:message code="tekDays.Venue"/></th>
+            <th><g:message code="tekDays.Start"/></th>
+            <th><g:message code="tekDays.Last"/></th>
             <th></th>
         </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
         <tr>
-            <th>Name</th>
-            <th>City</th>
-            <th>Description</th>
-            <th>Venue</th>
-            <th>Start Date</th>
-            <th>Last Updated</th>
+            <th><g:message code="tekDays.City"/></th>
+            <th><g:message code="tekDays.Description"/></th>
+            <th><g:message code="tekDays.Venue"/></th>
+            <th><g:message code="tekDays.Start"/></th>
+            <th><g:message code="tekDays.Last"/></th>
             <th></th>
         </tr>
         </tfoot>

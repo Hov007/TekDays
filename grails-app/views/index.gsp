@@ -12,7 +12,9 @@
 <div id="welcome">
     <br/>
 
-    <h3 id="textTitles">Welcome to TekDays.com</h3>
+    <h3 id="textTitles">
+        <g:message code="tekDays.welcome.to.tekDays"/>
+    </h3>
     <br>
 
     <div class="container">
@@ -26,7 +28,8 @@
 <span class="buttons"></span>
 <br>
 <div class="homeCell">
-    <h3 id="textTitles">Find a Tek Event</h3>
+    <h3 id="textTitles"><g:message code="tekDays.find.a.tek.event"/></h3>
+
     <br>
 
     <div class="container">
@@ -38,13 +41,13 @@
     </div>
 
     <span class="buttons">
-        <g:link controller="tekEvent" action="index"><i class="fa fa-search">Search</i></g:link>
+        <g:link controller="tekEvent" action="index"><i class="fa fa-search"><g:message code="tekDays.search"/></i></g:link>
     </span>
     &nbsp;
 </div>
 
 <div class="homeCell">
-    <h3 id="textTitles">Organize a Tek Event</h3>
+    <h3 id="textTitles"><g:message code="tekDays.organize.a.tek.event"/></h3>
     <br>
 
     <div class="container">
@@ -56,14 +59,14 @@
     </div>
 
     <span class="buttons">
-        <g:link controller="tekEvent" action="create"><i class="fa fa-users" aria-hidden="true">Organize</i></g:link>
+        <g:link controller="tekEvent" action="create"><i class="fa fa-users" aria-hidden="true"><g:message code="teDays.organize"/></i></g:link>
     </span>
     &nbsp;
 </div>
 
 
 <div class="homeCell">
-    <h3 id="textTitles">Sponsor a Tek Event</h3>
+    <h3 id="textTitles"><g:message code="tekDays.sponsor.a.tek.event"/></h3>
     <br>
     <div class="container">
     <p>If you are part of a business or organization that is involved in
@@ -73,7 +76,7 @@
     </div>
     <span class="buttons">
         <g:link controller="sponsor" action="create"><i class="fas fa-hand-holding-usd"
-                                                        aria-hidden="true">Sponsor</i></g:link>
+                                                        aria-hidden="true"><g:message code="tekDays.sponsor"/></i></g:link>
     </span>
     %{--    &nbsp;--}%
 </div>
