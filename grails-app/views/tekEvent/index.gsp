@@ -80,11 +80,11 @@
     <table id="dt">
         <thead>
         <tr>
-            <th id="lol"><g:message code="tekDays.Name"/></th>
-            <th><g:message code="tekDays.City"/></th>
-            <th><g:message code="tekDays.Description"/></th>
-            <th><g:message code="tekDays.Venue"/></th>
-            <th><g:message code="tekDays.Start"/></th>
+            <th id="lol"><g:message code="tekEvent.name.label"/></th>
+            <th><g:message code="tekEvent.city.label"/></th>
+            <th><g:message code="tekEvent.description.label"/></th>
+            <th><g:message code="tekEvent.venue.label"/></th>
+            <th><g:message code="tekEvent.startDate.label"/></th>
             <th><g:message code="tekDays.Last"/></th>
             <th></th>
         </tr>
@@ -92,10 +92,11 @@
         <tbody></tbody>
         <tfoot>
         <tr>
-            <th><g:message code="tekDays.City"/></th>
-            <th><g:message code="tekDays.Description"/></th>
-            <th><g:message code="tekDays.Venue"/></th>
-            <th><g:message code="tekDays.Start"/></th>
+            <th id="lol"><g:message code="tekEvent.name.label"/></th>
+            <th><g:message code="tekEvent.city.label"/></th>
+            <th><g:message code="tekEvent.description.label"/></th>
+            <th><g:message code="tekEvent.venue.label"/></th>
+            <th><g:message code="tekEvent.startDate.label"/></th>
             <th><g:message code="tekDays.Last"/></th>
             <th></th>
         </tr>

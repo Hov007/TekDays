@@ -24,7 +24,9 @@
             <g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]"/></g:link>
         </li>
         <li id="dsh"><g:link style="color: white" class="list" controller="dashboard" action="dashboard"
-                    id="${tekEventInstance.id}">Event Dashboard</g:link></li>
+                    id="${tekEventInstance.id}">
+            <g:message code="tekEvent.eventDashboard"/>
+        </g:link></li>
         <li><g:volunteerButton eventId="${tekEventInstance.id}"/></li>
     </ul>
 </div>
@@ -51,7 +53,9 @@
 
         <g:if test="${tekEventInstance?.city}">
             <li class="fieldcontain">
-                <span id="city-label" class="property-label">Location</span>
+                <span id="city-label" class="property-label">
+                    <g:message code="tekEvent.location"/>
+                </span>
                 <span class="property-value" aria-labelledby="city-label">
                     <g:fieldValue bean="${tekEventInstance}" field="venue"/>,
                     <g:fieldValue bean="${tekEventInstance}" field="city"/>
@@ -165,7 +169,7 @@
                 <span class="property-value" aria-labelledby="messages-label">
                     <g:link controller="tekMessage" action="index"
                             id="${tekEventInstance.id}">
-                        View Messages
+                        <g:message code="tekEvent.viewMessage"/>
                     </g:link></span>
             </li>
         </g:if>

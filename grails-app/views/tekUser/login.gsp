@@ -23,7 +23,9 @@
     <table>
     <tr class="prop">
     <td class="name">
-    <label for="username">User Name:</label>
+    <label for="username">
+        <g:message code="login.userName"/>
+    </label>
     </td>
     <td class="value">
     <input type="text" id="username" name="username" value="">
@@ -31,7 +33,9 @@
     </tr>
     <tr class="prop">
     <td class="name">
-    <label for="password">Password:</label>
+    <label for="password">
+        <g:message code="login.password"/>
+    </label>
     </td>
         <td class="value">
             <input type="password" id="password" name="password" value="">

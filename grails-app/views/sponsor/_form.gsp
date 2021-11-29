@@ -4,7 +4,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'name', 'error')} required">
 	<label for="name">
-		<g:message code="sponsor.name.label" default="Name" />
+		<g:message code="tekUser.fullName.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="name" required="" value="${sponsorInstance?.name}"/>
@@ -13,7 +13,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'website', 'error')} required">
 	<label for="website">
-		<g:message code="sponsor.website.label" default="Website" />
+		<g:message code="tekUser.website.label" default="Website" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field type="url" name="website" required="" value="${sponsorInstance?.website}"/>
@@ -22,7 +22,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'description', 'error')} ">
 	<label for="description">
-		<g:message code="sponsor.description.label" default="Description" />
+		<g:message code="task.label" default="Description" />
 		
 	</label>
 	<g:textArea name="description" cols="40" rows="5" maxlength="5000" value="${sponsorInstance?.description}"/>
@@ -40,7 +40,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sponsorInstance, field: 'sponsorships', 'error')} ">
 	<label for="sponsorships">
-		<g:message code="sponsor.sponsorships.label" default="Sponsorships" />
+		<g:message code="tekEvent.sponsorships.label" default="Sponsorships" />
 		
 	</label>
 	

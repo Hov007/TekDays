@@ -27,6 +27,27 @@
 
 		</div>
 	<g:loginToggle/>
+	<div class="nav-wrapper">
+		<div class="sl-nav">
+
+			<ul>
+				<li><b>Language:</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+					<div class="triangle"></div>
+					<ul>
+						<li><i class="sl-flag flag-de"><div></div></i> <span class="active">
+							<a href="${createLink(controller: controllerName, action: actionName)}?lang=hy">
+								Arm</a>
+						</span></li>
+						<li><i class="sl-flag flag-usa"><div></div></i> <span>
+							<a href="${createLink(controller: controllerName, action: actionName)}?lang=en">
+								Eng</a>
+						</span></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 		<g:layoutBody/>
 
 		<div class="footer" role="contentinfo"></div>

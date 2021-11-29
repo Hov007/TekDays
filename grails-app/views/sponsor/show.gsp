@@ -25,7 +25,7 @@
 			
 				<g:if test="${sponsorInstance?.name}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="sponsor.name.label" default="Name" /></span>
+					<span id="name-label" class="property-label"><g:message code="tekUser.fullName.label" default="Name" /></span>
 					
 						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${sponsorInstance}" field="name"/></span>
 					
@@ -34,7 +34,7 @@
 			
 				<g:if test="${sponsorInstance?.website}">
 				<li class="fieldcontain">
-					<span id="website-label" class="property-label"><g:message code="sponsor.website.label" default="Website" /></span>
+					<span id="website-label" class="property-label"><g:message code="tekUser.website.label" default="Website" /></span>
 					
 						<span class="property-value" aria-labelledby="website-label"><g:fieldValue bean="${sponsorInstance}" field="website"/></span>
 					
@@ -43,7 +43,7 @@
 			
 				<g:if test="${sponsorInstance?.description}">
 				<li class="fieldcontain">
-					<span id="description-label" class="property-label"><g:message code="sponsor.description.label" default="Description" /></span>
+					<span id="description-label" class="property-label"><g:message code="tekEvent.description.label" default="Description" /></span>
 					
 						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${sponsorInstance}" field="description"/></span>
 					
@@ -59,7 +59,7 @@
 			
 				<g:if test="${sponsorInstance?.sponsorships}">
 				<li class="fieldcontain">
-					<span id="sponsorships-label" class="property-label"><g:message code="sponsor.sponsorships.label" default="Sponsorships" /></span>
+					<span id="sponsorships-label" class="property-label"><g:message code="tekEvent.sponsorships.label" default="Sponsorships" /></span>
 					
 						<g:each in="${sponsorInstance.sponsorships}" var="s">
 						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
