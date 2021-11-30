@@ -27,6 +27,7 @@
 
 		</div>
 	<g:loginToggle/>
+
 	<div class="nav-wrapper">
 		<div class="sl-nav">
 

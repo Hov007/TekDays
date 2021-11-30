@@ -1,11 +1,13 @@
 package com.tekdays
 
-import org.hibernate.envers.query.AuditQuery
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+
+import grails.converters.*
+
 
 @Transactional(readOnly = true)
 class TekEventController {
@@ -16,6 +18,31 @@ class TekEventController {
 
     def index() {}
 
+    def json = {
+        def c = TekEvent.createCriteria()
+        def event = c.list {}
+        if(event) {
+            withFormat {
+                json { render event as JSON}
+            }
+        }
+        else {
+            response.sendError 404
+        }
+    }
+
+    def xml = {
+        def c = TekEvent.createCriteria()
+        def event = c.list {}
+        if(event) {
+            withFormat {
+                xml { render event as XML}
+            }
+        }
+        else {
+            response.sendError 404
+        }
+    }
 
     @Transactional
     def volunteer() {

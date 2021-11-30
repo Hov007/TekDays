@@ -99,7 +99,7 @@ class DatatablesSourceService implements GrailsApplicationAware {
             dataToRender.aaData << data
         }
 
-        LOGGER.info("Execution of dataTablesSource method took {} Ms", System.currentTimeMillis() - timer)
+        LOGGER.info("Execution of dataTablesSource method took {} {} Ms", System.currentTimeMillis() - timer)
         return dataToRender as JSON
     }
 }

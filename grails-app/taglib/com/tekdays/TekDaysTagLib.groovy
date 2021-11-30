@@ -37,17 +37,15 @@ class TekDaysTagLib {
         out << "</div><br/>"
     }
 
-//    def registerToggle = {
-//        if (request.getSession(false) && session.user) {
-//            out << "<span style='float:left; margin-left: 15px'>"
-//
-//
-//        } else {
-//            out << "<span style='float:right;margin-right:10px'>"
-//            out << "<a href='${createLink(controller: 'tekUser', action: 'register')}'>"
-//            out << "Register </a></span>"
-//        }
-//    }
+    def json = {
+        out << "<a href=\"${createLink(controller: 'tekEvent', action: 'json')}\">"
+        out << "JSON </a>"
+    }
+
+    def xml = {
+        out << "<a href=\"${createLink(controller: 'tekEvent', action: 'xml')}\">"
+        out << "XML </a>"
+    }
 
     def organizerEvents = {
         if (request.getSession(false) && session.user) {
