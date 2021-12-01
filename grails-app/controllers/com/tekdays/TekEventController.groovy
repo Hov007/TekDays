@@ -1,5 +1,6 @@
 package com.tekdays
 
+import org.codehaus.groovy.grails.web.json.JSONObject
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -7,7 +8,8 @@ import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 import grails.converters.*
-
+import groovy.json.JsonOutput
+//import grails.converters.deep.*
 
 @Transactional(readOnly = true)
 class TekEventController {
@@ -18,13 +20,14 @@ class TekEventController {
 
     def index() {}
 
+
     def json = {
         def c = TekEvent.createCriteria()
         def event = c.list {}
         if(event) {
-            withFormat {
-                json { render event as JSON}
-            }
+            def jsonify = event as JSON
+            jsonify.prettyPrint = true
+            render jsonify
         }
         else {
             response.sendError 404

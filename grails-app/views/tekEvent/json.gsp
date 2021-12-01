@@ -7,12 +7,9 @@
     <g:javascript library="jquery"/>
     <title><g:message code="default.show.label" args="[entityName]"/></title>
 </head>
+<script>
 
+</script>
 <body>
-<g:each in="${event}">
-    ${it}
-    <br>
-</g:each>
-
 </body>
 </html>

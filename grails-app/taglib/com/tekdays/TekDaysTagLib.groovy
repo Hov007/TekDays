@@ -38,12 +38,12 @@ class TekDaysTagLib {
     }
 
     def json = {
-        out << "<a href=\"${createLink(controller: 'tekEvent', action: 'json')}\">"
+        out << "<a target='_blank' href=\"${createLink(controller: 'tekEvent', action: 'json')}\">"
         out << "JSON </a>"
     }
 
     def xml = {
-        out << "<a href=\"${createLink(controller: 'tekEvent', action: 'xml')}\">"
+        out << "<a target='_blank' href=\"${createLink(controller: 'tekEvent', action: 'xml')}\">"
         out << "XML </a>"
     }
 
