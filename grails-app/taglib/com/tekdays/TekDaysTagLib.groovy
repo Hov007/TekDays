@@ -33,8 +33,10 @@ class TekDaysTagLib {
             out << "<span style='float:right;margin-right:10px'>"
             out << "<a href='${createLink(controller: 'tekUser', action: 'login')}'>"
             out << "${message(code: 'tekDays.login')} </a></span>"
+            out << "<span style='float:right;margin-right:20px'>"
+            out << "<a href='${createLink(controller: 'tekUser', action: 'signup')}'>"
+            out << "${message(code: 'tekDays.signup')} </a></span>"
         }
-        out << "</div><br/>"
     }
 
     def json = {

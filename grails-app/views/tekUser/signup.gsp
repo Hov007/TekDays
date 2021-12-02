@@ -2,51 +2,51 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main"/>
-    <title>Login</title>
+    <title>Sign up</title>
 </head>
 
 <body>
 <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
 </g:if>
-<g:form action="register">
+<g:form action="register" method="POST">
     <table>
         <tr class="prop">
             <td class="name">
-                <label for="fullName">Full Name:</label>
+                <label for="fullName"><g:message code="tekUser.fullName.label"/></label>
             </td>
             <td class="value">
-                <input type="text" id="fullName" name="fullname" value="">
+                <g:textField name="fullName" value="${tekUser?.fullName}" />
             </td>
         </tr>
 
         <tr class="prop">
             <td class="name">
-                <label for="email">Email:</label>
+                <label for="email"><g:message code="tekUser.email.label"/></label>
             </td>
             <td class="value">
-                <input type="email" id="email" name="email" value="">
+                <g:textField name="email" value="${tekUser?.email}" />
             </td>
         </tr>
         <tr class="prop">
             <td class="name">
-                <label for="username">Username:</label>
+                <label for="userName"><g:message code="login.userName"/></label>
             </td>
             <td class="value">
-                <input type="text" id="username" name="username" value="">
+                <g:textField name="userName" value="${tekUser?.userName}" />
             </td>
         </tr>
         <tr class="prop">
             <td class="name">
-                <label for="password">Password:</label>
+                <label for="password"><g:message code="login.password"/></label>
             </td>
             <td class="value">
-                <input type="password" id="password" name="password" value="">
+                <g:passwordField name="password" value="${tekUser?.password}" />
             </td>
         </tr>
         <tr class="prop">
             <td class="name">
-                <label for="password1">Confirm Password:</label>
+                <label for="password1"><g:message code="login.password1"/></label>
             </td>
             <td class="value">
                 <input type="password" id="password1" name="password1" value="">
@@ -56,7 +56,7 @@
             <td>
             </td>
             <td>
-                <input type="submit" value="Sign Up"/>
+                <g:submitButton name="register" value="Sign up"/>
             </td>
         </tr>
     </table>

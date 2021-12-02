@@ -99,23 +99,20 @@ class TekUserController {
         }
     }
 
-//    def register = {
-//        if (request.method == 'POST') {
-//            def tekUser = new TekUser(params)
-//            tekUser.passwordHashed = tekUser.password.encodeAsPassword()
-//            if (!tekUser()) {
-//                return [user: tekUser]
-//            }
-//            else {
-//                session.user = tekUser
-//                redirect(controller: 'tekEvent', action: 'index')
-//
-//            }
-//        }
-//        else if (session.user) {
-//            redirect(controller: 'tekEvent', action: 'index')
-//        }
-//    }
+    def signup() {
+        respond new TekUser()
+    }
+
+    @Transactional
+    def register() {
+        if (params.password != params.password1) {
+            flash.error = message("Passwords are not matched")
+            redirect(action: 'signup')
+        }
+        def newUser = new TekUser(params)
+        newUser.save()
+        redirect(action: "login")
+    }
 
     def validate() {
         def user = TekUser.findByUserName(params.username)
@@ -124,7 +121,7 @@ class TekUserController {
             if (params.cName)
                 redirect controller: params.cName, action: params.aName
             else
-                redirect(uri:'/')
+                redirect(uri: '/')
         } else {
             flash.message = "Invalid username and password."
             render view: 'login'
@@ -133,7 +130,7 @@ class TekUserController {
 
     def logout = {
         session.user = null
-        redirect(uri:'/')
+        redirect(uri: '/')
     }
 
     protected void notFound() {
