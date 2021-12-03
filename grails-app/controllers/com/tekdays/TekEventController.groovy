@@ -18,7 +18,8 @@ class TekEventController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", revisions: "PUT"]
     private static final Logger LOGGER = LoggerFactory.getLogger(TekEventController.class)
 
-    def index() {}
+    def index() {
+    }
 
 
     def json = {

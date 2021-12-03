@@ -110,8 +110,21 @@ class TekUserController {
             redirect(action: 'signup')
         }
         def newUser = new TekUser(params)
-        newUser.save()
-        redirect(action: "login")
+        try{
+            sendMail{
+                to newUser.email
+                subject "Registration Confirmation"
+                body view:"/emails/confirmRegistration",
+                    model: [user:newUser]
+
+            }
+            newUser.save()
+            redirect(action: 'login')
+        }
+        catch(Exception e) {
+            log.error "Problem sending email $e.message", e
+
+        }
     }
 
     def validate() {

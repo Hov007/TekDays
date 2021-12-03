@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="sofs4" name="com.tekdays.TekUserSpec" skipped="0" tests="1" time="0.057" timestamp="2021-10-26T11:59:29">
-  <properties />
-  <testcase classname="com.tekdays.TekUserSpec" name="test toString" time="0.052" />
-  <system-out><![CDATA[--Output from test toString--
-]]></system-out>
-  <system-err><![CDATA[--Output from test toString--
-]]></system-err>
-</testsuite>
