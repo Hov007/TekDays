@@ -14,7 +14,7 @@
     <task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
 
     <task:scheduled-tasks scheduler="taskScheduler">
-        <task:scheduled ref="emailService" method="sendEmail" cron="0 0/1 * * * *"/>
+        <task:scheduled ref="removeService" method="removeEvent" cron="0 0 12 * * ?"/> <!--cron="0 0/1 * * * *"-->
     </task:scheduled-tasks>
 
     <task:executor id="taskExecutor" pool-size="10-25" queue-capacity="60" rejection-policy="CALLER_RUNS"/>

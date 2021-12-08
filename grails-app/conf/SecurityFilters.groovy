@@ -4,7 +4,7 @@ class SecurityFilters {
             before = {
                 if (!controllerName)
                     return true
-                def allowedActions = ['show', 'index', 'login', 'register', 'signup', 'validate', 'search', "dataTablesRenderer"]
+                def allowedActions = ['show', 'login', 'register', 'signup', 'validate', 'search', "dataTablesRenderer"]
 
                 if (!session.user && !allowedActions.contains(actionName) ||
                         !session.user && controllerName == 'tekMessage' ) {

@@ -4,33 +4,42 @@ import org.codehaus.groovy.grails.web.json.JSONObject
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
+import java.text.SimpleDateFormat
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
 import grails.converters.*
 import groovy.json.JsonOutput
+
 //import grails.converters.deep.*
 
 @Transactional(readOnly = true)
 class TekEventController {
     def datatablesSourceService
     def taskService
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", revisions: "PUT"]
+    static allowedMethods = [save: "POST", update: "PUT",  revisions: "GET"]
     private static final Logger LOGGER = LoggerFactory.getLogger(TekEventController.class)
 
+    @Transactional
     def index() {
+//        Date newDate = new Date()
+//        def events = TekEvent.findAllByEndDateLessThan(newDate)
+//
+//        for (event in events) {
+//            event.delete()
+//        }
     }
 
 
     def json = {
         def c = TekEvent.createCriteria()
         def event = c.list {}
-        if(event) {
+        if (event) {
             def jsonify = event as JSON
             jsonify.prettyPrint = true
             render jsonify
-        }
-        else {
+        } else {
             response.sendError 404
         }
     }
@@ -38,12 +47,11 @@ class TekEventController {
     def xml = {
         def c = TekEvent.createCriteria()
         def event = c.list {}
-        if(event) {
+        if (event) {
             withFormat {
-                xml { render event as XML}
+                xml { render event as XML }
             }
-        }
-        else {
+        } else {
             response.sendError 404
         }
     }
@@ -57,7 +65,7 @@ class TekEventController {
     }
 
     def dataTablesRenderer() {
-        def propertiesToRender = ["name", "city", "description", "venue", "startDate", "lastUpdated", "id"]
+        def propertiesToRender = ["name", "city", "description", "venue", "startDate", "endDate", "id" ]
         def entityName = 'TekEvent'
         render datatablesSourceService.dataTablesSource(propertiesToRender, entityName, params)
     }

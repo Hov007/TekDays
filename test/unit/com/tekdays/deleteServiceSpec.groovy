@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(EventDelete)
-class EmailServiceSpec extends Specification {
+@TestFor(DeleteService)
+class deleteServiceSpec extends Specification {
 
     def setup() {
     }

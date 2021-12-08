@@ -51,6 +51,16 @@
                         aTargets: [4, 5]
                     },
                     {
+                        render: function (data) {
+                            if (data === "true") {
+                                return "Expired";
+                            } else {
+                                return "On Going";
+                            }
+                        },
+                        aTargets: [6]
+                    },
+                    {
                          visible: false,
                         aTargets: [6]
                     }
@@ -82,24 +92,26 @@
     <table id="dt">
         <thead>
         <tr>
-            <th id="lol"><g:message code="tekEvent.name.label"/></th>
+            <th><g:message code="tekEvent.name.label"/></th>
             <th><g:message code="tekEvent.city.label"/></th>
             <th><g:message code="tekEvent.description.label"/></th>
             <th><g:message code="tekEvent.venue.label"/></th>
             <th><g:message code="tekEvent.startDate.label"/></th>
-            <th><g:message code="tekDays.Last"/></th>
+            <th><g:message code="tekDays.end"/></th>
+%{--            <th><g:message code="tekDays.expired"/></th>--}%
             <th></th>
         </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
         <tr>
-            <th id="lol"><g:message code="tekEvent.name.label"/></th>
+            <th><g:message code="tekEvent.name.label"/></th>
             <th><g:message code="tekEvent.city.label"/></th>
             <th><g:message code="tekEvent.description.label"/></th>
             <th><g:message code="tekEvent.venue.label"/></th>
             <th><g:message code="tekEvent.startDate.label"/></th>
-            <th><g:message code="tekDays.Last"/></th>
+            <th><g:message code="tekDays.end"/></th>
+%{--            <th><g:message code="tekDays.expired"/></th>--}%
             <th></th>
         </tr>
         </tfoot>

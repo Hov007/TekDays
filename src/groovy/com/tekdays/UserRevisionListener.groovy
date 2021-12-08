@@ -1,5 +1,7 @@
 package com.tekdays
 
+import com.tekdays.TekUser
+import com.tekdays.UserRevisionEntity
 import org.hibernate.envers.RevisionListener
 import org.codehaus.groovy.grails.web.util.WebUtils
 
